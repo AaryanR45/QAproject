@@ -1,22 +1,28 @@
 *** Settings ***
-Documentation     Verify login functionality
+Documentation     Excel-driven login tests
 Resource          ../resources/pages/LoginPage.robot
 Resource          ../resources/pages/HomePage.robot
 Resource          ../resources/keywords/BrowserKeywords.robot
-Resource          ../variables/global_variables.robot
-Library           SeleniumLibrary
+Resource          ../resources/keywords/ExcelKeywords.robot
+Resource          ../resources/variables/global_variables.robot
+
 Suite Setup       Open Browser To Login Page
 Suite Teardown    Close Browser
 
-
 *** Test Cases ***
-Valid Login Should Succeed
-    [Documentation]    Verify user can login successfully with valid credentials
-    Login With Credentials    ${USERNAME}    ${PASSWORD}
-    Home Page Should Be Visible
+Login Tests From Excel
+    ${rows}=    Read Login Test Data
 
-Invalid Login Should Fail
-    [Documentation]    Verify user cannot login with invalid credentials
-    Login With Credentials    invalid_user    wrong_pass
-    Capture Page Screenshot    output/screenshots/invalid_login.png
-    Login Error Message Should Be Visible
+    FOR    ${row}    IN    @{rows}
+        Log To Console    \n--- Testing user: ${row['username']} ---
+        Login With Credentials    ${row['username']}    ${row['password']}
+
+        IF    '${row["expected_result"]}' == 'pass'
+            Home Page Should Be Visible
+        ELSE
+            Login Error Message Should Be Visible
+        END
+
+        Capture Page Screenshot    output/screenshots/${row['username']}.png
+        Go To    ${BASE_URL}
+    END
