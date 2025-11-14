@@ -18,4 +18,5 @@ Valid Login Should Succeed
 Invalid Login Should Fail
     [Documentation]    Verify user cannot login with invalid credentials
     Login With Credentials    invalid_user    wrong_pass
+    Capture Page Screenshot    output/screenshots/invalid_login.png
     Login Error Message Should Be Visible

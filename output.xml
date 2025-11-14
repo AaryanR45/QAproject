@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2025-11-14T15:07:09.493096" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Framework" source="C:\Users\aaryan\Desktop\Automation\Robot Framework">
+<suite id="s1-s1" name="Tests" source="C:\Users\aaryan\Desktop\Automation\Robot Framework\tests">
+<suite id="s1-s1-s1" name="Login Test" source="C:\Users\aaryan\Desktop\Automation\Robot Framework\tests\login_test.robot">
+<kw name="Open Browser To Login Page" owner="LoginPage" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-14T15:07:09.787861" level="INFO">Opening browser 'chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-14T15:07:09.787861" elapsed="4.132980"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-14T15:07:13.920841" elapsed="0.032296"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-14T15:07:13.954137" elapsed="0.015993"/>
+</kw>
+<status status="PASS" start="2025-11-14T15:07:09.786862" elapsed="4.183268"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Valid Login Should Succeed" line="13">
+<kw name="Login With Credentials" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-14T15:07:13.975125" elapsed="0.031373"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-14T15:07:14.007502" level="INFO">Typing text 'student' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-14T15:07:14.006498" elapsed="0.108657"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-14T15:07:14.115155" level="INFO">Typing text 'Password123' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-14T15:07:14.115155" elapsed="0.097536"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-14T15:07:14.212691" level="INFO">Clicking button 'id:submit'.</msg>
+<arg>id:submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-14T15:07:14.212691" elapsed="0.798445"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-11-14T15:07:13.974123" elapsed="1.037013"/>
+</kw>
+<kw name="Home Page Should Be Visible" owner="HomePage">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Logged In Successfully</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-14T15:07:15.012135" elapsed="0.019667"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-11-14T15:07:15.044999" level="INFO">Current page contains element 'xpath://a[text()='Log out']'.</msg>
+<arg>xpath://a[text()='Log out']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-11-14T15:07:15.031802" elapsed="0.013197"/>
+</kw>
+<status status="PASS" start="2025-11-14T15:07:15.012135" elapsed="0.032864"/>
+</kw>
+<doc>Verify user can login successfully with valid credentials</doc>
+<status status="PASS" start="2025-11-14T15:07:13.970130" elapsed="1.075868"/>
+</test>
+<test id="s1-s1-s1-t2" name="Invalid Login Should Fail" line="18">
+<kw name="Login With Credentials" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-14T15:07:15.047997" elapsed="2.592729"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-14T15:07:17.641730" level="INFO">Typing text 'invalid_user' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-14T15:07:17.640726" elapsed="0.076509"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-14T15:07:17.717235" level="INFO">Typing text 'wrong_pass' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-14T15:07:17.717235" elapsed="0.082007"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-14T15:07:17.800242" level="INFO">Clicking button 'id:submit'.</msg>
+<arg>id:submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-14T15:07:17.799242" elapsed="0.074301"/>
+</kw>
+<arg>invalid_user</arg>
+<arg>wrong_pass</arg>
+<status status="PASS" start="2025-11-14T15:07:15.046998" elapsed="2.826545"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-11-14T15:07:18.004559" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="output/screenshots/invalid_login.png"&gt;&lt;img src="output/screenshots/invalid_login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>output/screenshots/invalid_login.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-11-14T15:07:17.874546" elapsed="0.130013"/>
+</kw>
+<kw name="Login Error Message Should Be Visible" owner="LoginPage">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Your username is invalid!</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-14T15:07:18.005558" elapsed="0.014443"/>
+</kw>
+<status status="PASS" start="2025-11-14T15:07:18.005558" elapsed="0.014443"/>
+</kw>
+<doc>Verify user cannot login with invalid credentials</doc>
+<status status="PASS" start="2025-11-14T15:07:15.045998" elapsed="2.975007"/>
+</test>
+<kw name="Close Browser" owner="BrowserKeywords" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-11-14T15:07:18.022004" elapsed="6.259682"/>
+</kw>
+<status status="PASS" start="2025-11-14T15:07:18.022004" elapsed="6.259682"/>
+</kw>
+<doc>Verify login functionality</doc>
+<status status="PASS" start="2025-11-14T15:07:09.531029" elapsed="14.750657"/>
+</suite>
+<status status="PASS" start="2025-11-14T15:07:09.529029" elapsed="14.754660"/>
+</suite>
+<status status="PASS" start="2025-11-14T15:07:09.495095" elapsed="14.789510"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robot Framework" id="s1" pass="2" fail="0" skip="0">Robot Framework</stat>
+<stat name="Tests" id="s1-s1" pass="2" fail="0" skip="0">Robot Framework.Tests</stat>
+<stat name="Login Test" id="s1-s1-s1" pass="2" fail="0" skip="0">Robot Framework.Tests.Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
