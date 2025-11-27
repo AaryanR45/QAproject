@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ../variables/global_variables.robot
+Resource        ../variables/global_variables.robot
 
 *** Keywords ***
 Open Browser To Login Page

@@ -1,3 +1,6 @@
+*** Settings ***
+Library    SeleniumLibrary
+
 *** Keywords ***
 Home Page Should Be Visible
     Wait Until Location Contains    /logged-in-successfully/    timeout=10s
