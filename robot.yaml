@@ -1,8 +1,0 @@
-paths:
-  output: output
-
-options:
-  output: output/output.xml
-  log: output/log.html
-  report: output/report.html
-  loglevel: INFO

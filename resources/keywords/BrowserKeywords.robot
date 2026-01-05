@@ -7,5 +7,5 @@ Open Browser To Login Page
     Open Browser    ${BASE_URL}    ${BROWSER}
     Maximize Browser Window
 
-Close Browser
+Close ABrowser
     Close All Browsers

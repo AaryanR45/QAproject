@@ -1,94 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2025-11-18T14:52:55.077584" rpa="false" schemaversion="5">
-<suite id="s1" name="Robot Framework" source="C:\Users\aaryan\Desktop\Automation\Robot Framework">
-<suite id="s1-s1" name="Tests" source="C:\Users\aaryan\Desktop\Automation\Robot Framework\tests">
-<suite id="s1-s1-s1" name="Login Test" source="C:\Users\aaryan\Desktop\Automation\Robot Framework\tests\login_test.robot">
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-05T16:44:52.476489" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="A:\QAproject\tests">
+<suite id="s1-s1" name="Login Test" source="A:\QAproject\tests\login_test.robot">
 <kw name="Open Browser To Login Page" owner="BrowserKeywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:52:55.743922" level="INFO">Opening browser 'chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
+<msg time="2026-01-05T16:44:52.806395" level="INFO">Opening browser 'chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
 <arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-18T14:52:55.742924" elapsed="10.850330"/>
+<status status="PASS" start="2026-01-05T16:44:52.806194" elapsed="3.647062"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-18T14:53:06.593254" elapsed="0.024983"/>
+<status status="PASS" start="2026-01-05T16:44:56.453582" elapsed="0.034039"/>
 </kw>
-<status status="PASS" start="2025-11-18T14:52:55.741924" elapsed="10.876313"/>
+<status status="PASS" start="2026-01-05T16:44:52.805645" elapsed="3.682192"/>
 </kw>
-<test id="s1-s1-s1-t1" name="Login Tests From Excel" line="13">
+<test id="s1-s1-t1" name="Login Test Row 1" line="22">
+<kw name="Get Login Test Row" owner="ExcelKeywords">
 <kw name="Read Login Test Data" owner="ExcelKeywords">
 <kw name="Open Workbook" owner="RPA.Excel.Files">
-<msg time="2025-11-18T14:53:06.630606" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x0000017697A43690&gt;</msg>
+<msg time="2026-01-05T16:44:56.493831" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001F811011BE0&gt;</msg>
 <arg>${EXCEL_FILE}</arg>
 <doc>Open an existing Excel workbook.</doc>
-<status status="PASS" start="2025-11-18T14:53:06.619237" elapsed="0.011369"/>
+<status status="PASS" start="2026-01-05T16:44:56.489274" elapsed="0.004653"/>
 </kw>
 <kw name="Read Worksheet As Table" owner="RPA.Excel.Files">
-<msg time="2025-11-18T14:53:06.631606" level="INFO">Created table: Table(columns=['username', 'password', 'expected_result'], rows=3)</msg>
-<msg time="2025-11-18T14:53:06.632606" level="INFO">${rows} = Table(columns=['username', 'password', 'expected_result'], rows=3)</msg>
-<var>${rows}</var>
+<msg time="2026-01-05T16:44:56.494715" level="INFO">Created table: Table(columns=['username', 'password', 'expected_result'], rows=3)</msg>
+<msg time="2026-01-05T16:44:56.494888" level="INFO">${table} = Table(columns=['username', 'password', 'expected_result'], rows=3)</msg>
+<var>${table}</var>
 <arg>header=True</arg>
 <doc>Read the contents of a worksheet into a Table container. Allows
 sorting/filtering/manipulating using the ``RPA.Tables`` library.</doc>
-<status status="PASS" start="2025-11-18T14:53:06.630606" elapsed="0.002000"/>
+<status status="PASS" start="2026-01-05T16:44:56.494094" elapsed="0.000820"/>
 </kw>
 <kw name="Close Workbook" owner="RPA.Excel.Files">
-<msg time="2025-11-18T14:53:06.632606" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x0000017697A43690&gt;</msg>
+<msg time="2026-01-05T16:44:56.495171" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001F811011BE0&gt;</msg>
 <doc>Close the active workbook.</doc>
-<status status="PASS" start="2025-11-18T14:53:06.632606" elapsed="0.000000"/>
+<status status="PASS" start="2026-01-05T16:44:56.495056" elapsed="0.000164"/>
 </kw>
 <return>
-<value>${rows}</value>
-<status status="PASS" start="2025-11-18T14:53:06.633605" elapsed="0.000000"/>
+<value>@{table}</value>
+<status status="PASS" start="2026-01-05T16:44:56.495275" elapsed="0.000080"/>
 </return>
-<msg time="2025-11-18T14:53:06.633605" level="INFO">${rows} = Table(columns=['username', 'password', 'expected_result'], rows=3)</msg>
-<var>${rows}</var>
-<status status="PASS" start="2025-11-18T14:53:06.619237" elapsed="0.014368"/>
+<msg time="2026-01-05T16:44:56.495611" level="INFO">${all_rows} = [{'username': 'student', 'password': 'Password123', 'expected_result': 'pass'}, {'username': 'incorrectUser', 'password': 'Password123', 'expected_result': 'fail'}, {'username': 'student', 'password':...</msg>
+<var>${all_rows}</var>
+<status status="PASS" start="2026-01-05T16:44:56.489106" elapsed="0.006532"/>
 </kw>
-<for flavor="IN">
-<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-05T16:44:56.496150" level="INFO">${index} = 0</msg>
+<var>${index}</var>
+<arg>${row_index} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-05T16:44:56.495751" elapsed="0.000434"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-01-05T16:44:56.496465" level="INFO">${row} = {'username': 'student', 'password': 'Password123', 'expected_result': 'pass'}</msg>
+<var>${row}</var>
+<arg>${all_rows}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-01-05T16:44:56.496306" elapsed="0.000180"/>
+</kw>
+<return>
+<value>${row}</value>
+<status status="PASS" start="2026-01-05T16:44:56.496533" elapsed="0.000042"/>
+</return>
+<msg time="2026-01-05T16:44:56.496674" level="INFO">${row} = {'username': 'student', 'password': 'Password123', 'expected_result': 'pass'}</msg>
+<var>${row}</var>
+<arg>1</arg>
+<status status="PASS" start="2026-01-05T16:44:56.488786" elapsed="0.007907"/>
+</kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n--- Testing user: ${row['username']} ---</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-18T14:53:06.634605" elapsed="0.000999"/>
+<status status="PASS" start="2026-01-05T16:44:56.497096" elapsed="0.001183"/>
 </kw>
 <kw name="Login With Credentials" owner="LoginPage">
 <kw name="Enter Username" owner="LoginPage">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:06.638600" level="INFO">Typing text 'student' into text field 'id=username'.</msg>
+<msg time="2026-01-05T16:44:56.501208" level="INFO">Typing text 'student' into text field 'id=username'.</msg>
 <arg>id=username</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-18T14:53:06.638600" elapsed="0.124331"/>
+<status status="PASS" start="2026-01-05T16:44:56.500438" elapsed="0.093435"/>
 </kw>
 <arg>${username}</arg>
-<status status="PASS" start="2025-11-18T14:53:06.637601" elapsed="0.125330"/>
+<status status="PASS" start="2026-01-05T16:44:56.499997" elapsed="0.094099"/>
 </kw>
 <kw name="Enter Password" owner="LoginPage">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:06.764934" level="INFO">Typing text 'Password123' into text field 'id=password'.</msg>
+<msg time="2026-01-05T16:44:56.595260" level="INFO">Typing text 'Password123' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-18T14:53:06.763930" elapsed="0.102936"/>
+<status status="PASS" start="2026-01-05T16:44:56.594936" elapsed="0.062668"/>
 </kw>
 <arg>${password}</arg>
-<status status="PASS" start="2025-11-18T14:53:06.762931" elapsed="0.103935"/>
+<status status="PASS" start="2026-01-05T16:44:56.594312" elapsed="0.063467"/>
 </kw>
 <kw name="Click Login Button" owner="LoginPage">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:06.867867" level="INFO">Clicking button 'xpath=//*[@id="submit"]'.</msg>
+<msg time="2026-01-05T16:44:56.658621" level="INFO">Clicking button 'xpath=//*[@id="submit"]'.</msg>
 <arg>xpath=//*[@id="submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-18T14:53:06.866866" elapsed="5.274361"/>
+<status status="PASS" start="2026-01-05T16:44:56.658304" elapsed="0.873475"/>
 </kw>
-<status status="PASS" start="2025-11-18T14:53:06.866866" elapsed="5.274361"/>
+<status status="PASS" start="2026-01-05T16:44:56.658005" elapsed="0.873884"/>
 </kw>
 <arg>${row['username']}</arg>
 <arg>${row['password']}</arg>
-<status status="PASS" start="2025-11-18T14:53:06.635604" elapsed="5.506623"/>
+<status status="PASS" start="2026-01-05T16:44:56.498779" elapsed="1.033153"/>
 </kw>
 <if>
 <branch type="IF" condition="'${row[&quot;expected_result&quot;]}' == 'pass'">
@@ -97,263 +119,375 @@ sorting/filtering/manipulating using the ``RPA.Tables`` library.</doc>
 <arg>/logged-in-successfully/</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-11-18T14:53:12.143226" elapsed="0.005996"/>
+<status status="PASS" start="2026-01-05T16:44:57.532957" elapsed="0.003675"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:12.161538" level="INFO">Current page contains element 'xpath://a[text()='Log out']'.</msg>
+<msg time="2026-01-05T16:44:57.543697" level="INFO">Current page contains element 'xpath://a[text()='Log out']'.</msg>
 <arg>xpath://a[text()='Log out']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-11-18T14:53:12.149222" elapsed="0.012316"/>
+<status status="PASS" start="2026-01-05T16:44:57.536787" elapsed="0.006979"/>
 </kw>
-<status status="PASS" start="2025-11-18T14:53:12.143226" elapsed="0.018312"/>
+<status status="PASS" start="2026-01-05T16:44:57.532736" elapsed="0.011097"/>
 </kw>
-<status status="PASS" start="2025-11-18T14:53:12.142227" elapsed="0.020314"/>
+<status status="PASS" start="2026-01-05T16:44:57.532228" elapsed="0.011636"/>
 </branch>
 <branch type="ELSE">
 <kw name="Login Error Message Should Be Visible" owner="HomePage">
-<status status="NOT RUN" start="2025-11-18T14:53:12.162541" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-01-05T16:44:57.544053" elapsed="0.000025"/>
 </kw>
-<status status="NOT RUN" start="2025-11-18T14:53:12.162541" elapsed="0.000000"/>
+<kw name="Pause To See Alert">
+<status status="NOT RUN" start="2026-01-05T16:44:57.544178" elapsed="0.000020"/>
+</kw>
+<status status="NOT RUN" start="2026-01-05T16:44:57.543908" elapsed="0.000314"/>
 </branch>
-<status status="PASS" start="2025-11-18T14:53:12.142227" elapsed="0.020314"/>
+<status status="PASS" start="2026-01-05T16:44:57.532182" elapsed="0.012067"/>
 </if>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:12.258451" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="output/screenshots/student.png"&gt;&lt;img src="output/screenshots/student.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>output/screenshots/${row['username']}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-11-18T14:53:12.162541" elapsed="0.095910"/>
-</kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:12.259452" level="INFO">Opening url 'https://practicetestautomation.com/practice-test-login/'</msg>
+<msg time="2026-01-05T16:44:57.544718" level="INFO">Opening url 'https://practicetestautomation.com/practice-test-login/'</msg>
 <arg>${BASE_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-11-18T14:53:12.258451" elapsed="2.295787"/>
+<status status="PASS" start="2026-01-05T16:44:57.544533" elapsed="0.388542"/>
 </kw>
-<var name="${row}">{'username': 'student', 'password': 'Password123', 'expected_result': 'pass'}</var>
-<status status="PASS" start="2025-11-18T14:53:06.634605" elapsed="7.919633"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n--- Testing user: ${row['username']} ---</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.555242" elapsed="0.000998"/>
-</kw>
-<kw name="Login With Credentials" owner="LoginPage">
-<kw name="Enter Username" owner="LoginPage">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:14.558239" level="INFO">Typing text 'incorrectUser' into text field 'id=username'.</msg>
-<arg>id=username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.558239" elapsed="0.079747"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2025-11-18T14:53:14.557240" elapsed="0.080746"/>
-</kw>
-<kw name="Enter Password" owner="LoginPage">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:14.638985" level="INFO">Typing text 'Password123' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.638985" elapsed="0.080181"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2025-11-18T14:53:14.638985" elapsed="0.080181"/>
-</kw>
-<kw name="Click Login Button" owner="LoginPage">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:14.721170" level="INFO">Clicking button 'xpath=//*[@id="submit"]'.</msg>
-<arg>xpath=//*[@id="submit"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.720165" elapsed="0.074250"/>
-</kw>
-<status status="PASS" start="2025-11-18T14:53:14.720165" elapsed="0.074250"/>
-</kw>
-<arg>${row['username']}</arg>
-<arg>${row['password']}</arg>
-<status status="PASS" start="2025-11-18T14:53:14.556240" elapsed="0.238175"/>
-</kw>
-<if>
-<branch type="IF" condition="'${row[&quot;expected_result&quot;]}' == 'pass'">
-<kw name="Home Page Should Be Visible" owner="HomePage">
-<status status="NOT RUN" start="2025-11-18T14:53:14.795414" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2025-11-18T14:53:14.794415" elapsed="0.000999"/>
-</branch>
-<branch type="ELSE">
-<kw name="Login Error Message Should Be Visible" owner="HomePage">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Your username is invalid!</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.795414" elapsed="0.014125"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:14.823639" level="INFO">Current page contains element 'xpath://*[@id="error"]'.</msg>
-<arg>xpath://*[@id="error"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.810539" elapsed="0.013100"/>
-</kw>
-<arg>Page Should Contain Element</arg>
-<arg>xpath://*[@id="error"]</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.810539" elapsed="0.013100"/>
-</kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Your password is invalid!</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.824640" elapsed="0.012970"/>
-</kw>
-<status status="PASS" start="2025-11-18T14:53:14.795414" elapsed="0.042196"/>
-</kw>
-<status status="PASS" start="2025-11-18T14:53:14.795414" elapsed="0.042196"/>
-</branch>
-<status status="PASS" start="2025-11-18T14:53:14.794415" elapsed="0.043195"/>
-</if>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:14.979559" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="output/screenshots/incorrectUser.png"&gt;&lt;img src="output/screenshots/incorrectUser.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>output/screenshots/${row['username']}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.837610" elapsed="0.141949"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:14.980558" level="INFO">Opening url 'https://practicetestautomation.com/practice-test-login/'</msg>
-<arg>${BASE_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-11-18T14:53:14.980558" elapsed="0.244850"/>
-</kw>
-<var name="${row}">{'username': 'incorrectUser', 'password': 'Password123', 'expected_result': 'fail'}</var>
-<status status="PASS" start="2025-11-18T14:53:14.555242" elapsed="0.671164"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n--- Testing user: ${row['username']} ---</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.227406" elapsed="0.000999"/>
-</kw>
-<kw name="Login With Credentials" owner="LoginPage">
-<kw name="Enter Username" owner="LoginPage">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:15.232402" level="INFO">Typing text 'student' into text field 'id=username'.</msg>
-<arg>id=username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.232402" elapsed="0.079952"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2025-11-18T14:53:15.231404" elapsed="0.081950"/>
-</kw>
-<kw name="Enter Password" owner="LoginPage">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:15.314354" level="INFO">Typing text 'incorrectPassword' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.313354" elapsed="0.100937"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2025-11-18T14:53:15.313354" elapsed="0.100937"/>
-</kw>
-<kw name="Click Login Button" owner="LoginPage">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:15.415289" level="INFO">Clicking button 'xpath=//*[@id="submit"]'.</msg>
-<arg>xpath=//*[@id="submit"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.415289" elapsed="0.068959"/>
-</kw>
-<status status="PASS" start="2025-11-18T14:53:15.414291" elapsed="0.069957"/>
-</kw>
-<arg>${row['username']}</arg>
-<arg>${row['password']}</arg>
-<status status="PASS" start="2025-11-18T14:53:15.229404" elapsed="0.254844"/>
-</kw>
-<if>
-<branch type="IF" condition="'${row[&quot;expected_result&quot;]}' == 'pass'">
-<kw name="Home Page Should Be Visible" owner="HomePage">
-<status status="NOT RUN" start="2025-11-18T14:53:15.485247" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2025-11-18T14:53:15.484248" elapsed="0.000999"/>
-</branch>
-<branch type="ELSE">
-<kw name="Login Error Message Should Be Visible" owner="HomePage">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Your username is invalid!</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.485247" elapsed="0.010517"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:15.501929" level="INFO">Current page contains element 'xpath://*[@id="error"]'.</msg>
-<arg>xpath://*[@id="error"]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.495764" elapsed="0.007170"/>
-</kw>
-<arg>Page Should Contain Element</arg>
-<arg>xpath://*[@id="error"]</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.495764" elapsed="0.007170"/>
-</kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Your password is invalid!</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.502934" elapsed="0.009991"/>
-</kw>
-<status status="PASS" start="2025-11-18T14:53:15.485247" elapsed="0.027678"/>
-</kw>
-<status status="PASS" start="2025-11-18T14:53:15.485247" elapsed="0.027678"/>
-</branch>
-<status status="PASS" start="2025-11-18T14:53:15.484248" elapsed="0.028677"/>
-</if>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:15.637934" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="output/screenshots/student.png"&gt;&lt;img src="output/screenshots/student.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>output/screenshots/${row['username']}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.513925" elapsed="0.124009"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-11-18T14:53:15.638934" level="INFO">Opening url 'https://practicetestautomation.com/practice-test-login/'</msg>
-<arg>${BASE_URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-11-18T14:53:15.638934" elapsed="0.386495"/>
-</kw>
-<var name="${row}">{'username': 'student', 'password': 'incorrectPassword', 'expected_result': 'fail'}</var>
-<status status="PASS" start="2025-11-18T14:53:15.226406" elapsed="0.799023"/>
-</iter>
-<var>${row}</var>
-<value>@{rows}</value>
-<status status="PASS" start="2025-11-18T14:53:06.633605" elapsed="9.392827"/>
-</for>
-<status status="PASS" start="2025-11-18T14:53:06.618237" elapsed="9.408195"/>
+<status status="PASS" start="2026-01-05T16:44:56.487951" elapsed="1.445514"/>
 </test>
-<kw name="Close Browser" owner="BrowserKeywords" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-11-18T14:53:16.027431" elapsed="6.212094"/>
+<test id="s1-s1-t2" name="Login Test Row 2" line="36">
+<kw name="Get Login Test Row" owner="ExcelKeywords">
+<kw name="Read Login Test Data" owner="ExcelKeywords">
+<kw name="Open Workbook" owner="RPA.Excel.Files">
+<msg time="2026-01-05T16:44:57.939514" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001F812C50910&gt;</msg>
+<arg>${EXCEL_FILE}</arg>
+<doc>Open an existing Excel workbook.</doc>
+<status status="PASS" start="2026-01-05T16:44:57.935687" elapsed="0.003911"/>
 </kw>
-<status status="PASS" start="2025-11-18T14:53:16.027431" elapsed="6.212094"/>
+<kw name="Read Worksheet As Table" owner="RPA.Excel.Files">
+<msg time="2026-01-05T16:44:57.940118" level="INFO">Created table: Table(columns=['username', 'password', 'expected_result'], rows=3)</msg>
+<msg time="2026-01-05T16:44:57.940248" level="INFO">${table} = Table(columns=['username', 'password', 'expected_result'], rows=3)</msg>
+<var>${table}</var>
+<arg>header=True</arg>
+<doc>Read the contents of a worksheet into a Table container. Allows
+sorting/filtering/manipulating using the ``RPA.Tables`` library.</doc>
+<status status="PASS" start="2026-01-05T16:44:57.939773" elapsed="0.000497"/>
 </kw>
-<doc>Excel-driven login tests</doc>
-<status status="PASS" start="2025-11-18T14:52:55.116560" elapsed="27.122965"/>
+<kw name="Close Workbook" owner="RPA.Excel.Files">
+<msg time="2026-01-05T16:44:57.940490" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001F812C50910&gt;</msg>
+<doc>Close the active workbook.</doc>
+<status status="PASS" start="2026-01-05T16:44:57.940386" elapsed="0.000152"/>
+</kw>
+<return>
+<value>@{table}</value>
+<status status="PASS" start="2026-01-05T16:44:57.940585" elapsed="0.000041"/>
+</return>
+<msg time="2026-01-05T16:44:57.940757" level="INFO">${all_rows} = [{'username': 'student', 'password': 'Password123', 'expected_result': 'pass'}, {'username': 'incorrectUser', 'password': 'Password123', 'expected_result': 'fail'}, {'username': 'student', 'password':...</msg>
+<var>${all_rows}</var>
+<status status="PASS" start="2026-01-05T16:44:57.935160" elapsed="0.005618"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-05T16:44:57.941149" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>${row_index} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-05T16:44:57.940860" elapsed="0.000312"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-01-05T16:44:57.941397" level="INFO">${row} = {'username': 'incorrectUser', 'password': 'Password123', 'expected_result': 'fail'}</msg>
+<var>${row}</var>
+<arg>${all_rows}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-01-05T16:44:57.941257" elapsed="0.000160"/>
+</kw>
+<return>
+<value>${row}</value>
+<status status="PASS" start="2026-01-05T16:44:57.941459" elapsed="0.000028"/>
+</return>
+<msg time="2026-01-05T16:44:57.941573" level="INFO">${row} = {'username': 'incorrectUser', 'password': 'Password123', 'expected_result': 'fail'}</msg>
+<var>${row}</var>
+<arg>2</arg>
+<status status="PASS" start="2026-01-05T16:44:57.934836" elapsed="0.006756"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- Testing user: ${row['username']} ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-05T16:44:57.941862" elapsed="0.000634"/>
+</kw>
+<kw name="Login With Credentials" owner="LoginPage">
+<kw name="Enter Username" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:44:57.943683" level="INFO">Typing text 'incorrectUser' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-05T16:44:57.943516" elapsed="0.061812"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2026-01-05T16:44:57.943339" elapsed="0.062145"/>
+</kw>
+<kw name="Enter Password" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:44:58.006537" level="INFO">Typing text 'Password123' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-05T16:44:58.006224" elapsed="0.062850"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-05T16:44:58.005788" elapsed="0.063423"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:44:58.069813" level="INFO">Clicking button 'xpath=//*[@id="submit"]'.</msg>
+<arg>xpath=//*[@id="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-05T16:44:58.069658" elapsed="0.052538"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:44:58.069432" elapsed="0.052900"/>
+</kw>
+<arg>${row['username']}</arg>
+<arg>${row['password']}</arg>
+<status status="PASS" start="2026-01-05T16:44:57.942732" elapsed="0.179648"/>
+</kw>
+<if>
+<branch type="IF" condition="'${row[&quot;expected_result&quot;]}' == 'pass'">
+<kw name="Home Page Should Be Visible" owner="HomePage">
+<status status="NOT RUN" start="2026-01-05T16:44:58.123478" elapsed="0.000031"/>
+</kw>
+<status status="NOT RUN" start="2026-01-05T16:44:58.122879" elapsed="0.000665"/>
+</branch>
+<branch type="ELSE">
+<kw name="Login Error Message Should Be Visible" owner="HomePage">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Your username is invalid!</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-05T16:44:58.123884" elapsed="0.009513"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:44:58.143962" level="INFO">Current page contains element 'xpath://*[@id="error"]'.</msg>
+<arg>xpath://*[@id="error"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-05T16:44:58.134138" elapsed="0.009926"/>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>xpath://*[@id="error"]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-05T16:44:58.133622" elapsed="0.010516"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Your password is invalid!</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-05T16:44:58.144277" elapsed="0.010399"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:44:58.123671" elapsed="0.031143"/>
+</kw>
+<kw name="Pause To See Alert">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:44:58.156012" level="INFO">Executing JavaScript:
+window.scrollBy(0, 100)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, ${scroll_px})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-01-05T16:44:58.155526" elapsed="0.007060"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-05T16:45:01.163664" level="INFO">Slept 3 seconds.</msg>
+<arg>${pause_s}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-05T16:44:58.162857" elapsed="3.001055"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:44:58.155093" elapsed="3.009054"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:44:58.123576" elapsed="3.040657"/>
+</branch>
+<status status="PASS" start="2026-01-05T16:44:58.122767" elapsed="3.041566"/>
+</if>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:45:01.165503" level="INFO">Opening url 'https://practicetestautomation.com/practice-test-login/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.165086" elapsed="0.392132"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:44:57.934295" elapsed="3.623310"/>
+</test>
+<test id="s1-s1-t3" name="Login Test Row 3" line="50">
+<kw name="Get Login Test Row" owner="ExcelKeywords">
+<kw name="Read Login Test Data" owner="ExcelKeywords">
+<kw name="Open Workbook" owner="RPA.Excel.Files">
+<msg time="2026-01-05T16:45:01.563276" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001F812B7A350&gt;</msg>
+<arg>${EXCEL_FILE}</arg>
+<doc>Open an existing Excel workbook.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.559529" elapsed="0.003835"/>
+</kw>
+<kw name="Read Worksheet As Table" owner="RPA.Excel.Files">
+<msg time="2026-01-05T16:45:01.563768" level="INFO">Created table: Table(columns=['username', 'password', 'expected_result'], rows=3)</msg>
+<msg time="2026-01-05T16:45:01.563903" level="INFO">${table} = Table(columns=['username', 'password', 'expected_result'], rows=3)</msg>
+<var>${table}</var>
+<arg>header=True</arg>
+<doc>Read the contents of a worksheet into a Table container. Allows
+sorting/filtering/manipulating using the ``RPA.Tables`` library.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.563506" elapsed="0.000419"/>
+</kw>
+<kw name="Close Workbook" owner="RPA.Excel.Files">
+<msg time="2026-01-05T16:45:01.564127" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x000001F812B7A350&gt;</msg>
+<doc>Close the active workbook.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.564027" elapsed="0.000143"/>
+</kw>
+<return>
+<value>@{table}</value>
+<status status="PASS" start="2026-01-05T16:45:01.564216" elapsed="0.000075"/>
+</return>
+<msg time="2026-01-05T16:45:01.564440" level="INFO">${all_rows} = [{'username': 'student', 'password': 'Password123', 'expected_result': 'pass'}, {'username': 'incorrectUser', 'password': 'Password123', 'expected_result': 'fail'}, {'username': 'student', 'password':...</msg>
+<var>${all_rows}</var>
+<status status="PASS" start="2026-01-05T16:45:01.559161" elapsed="0.005299"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-05T16:45:01.564835" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${row_index} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.564553" elapsed="0.000302"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-01-05T16:45:01.565063" level="INFO">${row} = {'username': 'student', 'password': 'incorrectPassword', 'expected_result': 'fail'}</msg>
+<var>${row}</var>
+<arg>${all_rows}</arg>
+<arg>${index}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.564936" elapsed="0.000146"/>
+</kw>
+<return>
+<value>${row}</value>
+<status status="PASS" start="2026-01-05T16:45:01.565121" elapsed="0.000026"/>
+</return>
+<msg time="2026-01-05T16:45:01.565228" level="INFO">${row} = {'username': 'student', 'password': 'incorrectPassword', 'expected_result': 'fail'}</msg>
+<var>${row}</var>
+<arg>3</arg>
+<status status="PASS" start="2026-01-05T16:45:01.558898" elapsed="0.006348"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- Testing user: ${row['username']} ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.565464" elapsed="0.000550"/>
+</kw>
+<kw name="Login With Credentials" owner="LoginPage">
+<kw name="Enter Username" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:45:01.567172" level="INFO">Typing text 'student' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.567024" elapsed="0.059982"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2026-01-05T16:45:01.566854" elapsed="0.060276"/>
+</kw>
+<kw name="Enter Password" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:45:01.627810" level="INFO">Typing text 'incorrectPassword' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.627604" elapsed="0.051267"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-05T16:45:01.627315" elapsed="0.051723"/>
+</kw>
+<kw name="Click Login Button" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:45:01.680018" level="INFO">Clicking button 'xpath=//*[@id="submit"]'.</msg>
+<arg>xpath=//*[@id="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.679802" elapsed="0.051109"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:45:01.679403" elapsed="0.051615"/>
+</kw>
+<arg>${row['username']}</arg>
+<arg>${row['password']}</arg>
+<status status="PASS" start="2026-01-05T16:45:01.566297" elapsed="0.164764"/>
+</kw>
+<if>
+<branch type="IF" condition="'${row[&quot;expected_result&quot;]}' == 'pass'">
+<kw name="Home Page Should Be Visible" owner="HomePage">
+<status status="NOT RUN" start="2026-01-05T16:45:01.732066" elapsed="0.000033"/>
+</kw>
+<status status="NOT RUN" start="2026-01-05T16:45:01.731426" elapsed="0.000713"/>
+</branch>
+<branch type="ELSE">
+<kw name="Login Error Message Should Be Visible" owner="HomePage">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Your username is invalid!</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.732480" elapsed="0.007874"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:45:01.745588" level="INFO">Current page contains element 'xpath://*[@id="error"]'.</msg>
+<arg>xpath://*[@id="error"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.740993" elapsed="0.004671"/>
+</kw>
+<arg>Page Should Contain Element</arg>
+<arg>xpath://*[@id="error"]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.740626" elapsed="0.005110"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Your password is invalid!</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.745883" elapsed="0.005628"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:45:01.732272" elapsed="0.019347"/>
+</kw>
+<kw name="Pause To See Alert">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:45:01.752521" level="INFO">Executing JavaScript:
+window.scrollBy(0, 100)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, ${scroll_px})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.752095" elapsed="0.003769"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-05T16:45:04.756652" level="INFO">Slept 3 seconds.</msg>
+<arg>${pause_s}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-05T16:45:01.756033" elapsed="3.000883"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:45:01.751781" elapsed="3.005374"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:45:01.732173" elapsed="3.025074"/>
+</branch>
+<status status="PASS" start="2026-01-05T16:45:01.731370" elapsed="3.025979"/>
+</if>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-01-05T16:45:04.758639" level="INFO">Opening url 'https://practicetestautomation.com/practice-test-login/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-01-05T16:45:04.758189" elapsed="0.393623"/>
+</kw>
+<status status="PASS" start="2026-01-05T16:45:01.558386" elapsed="3.593849"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-05T16:45:05.153195" elapsed="2.145111"/>
+</kw>
+<doc>Login tests</doc>
+<status status="PASS" start="2026-01-05T16:44:52.505913" elapsed="14.792637"/>
 </suite>
-<status status="PASS" start="2025-11-18T14:52:55.112563" elapsed="27.128495"/>
-</suite>
-<status status="PASS" start="2025-11-18T14:52:55.079582" elapsed="27.162480"/>
+<status status="PASS" start="2026-01-05T16:44:52.477903" elapsed="14.821833"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Robot Framework" id="s1" pass="1" fail="0" skip="0">Robot Framework</stat>
-<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Robot Framework.Tests</stat>
-<stat name="Login Test" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot Framework.Tests.Login Test</stat>
+<stat name="Tests" id="s1" pass="3" fail="0" skip="0">Tests</stat>
+<stat name="Login Test" id="s1-s1" pass="3" fail="0" skip="0">Tests.Login Test</stat>
 </suite>
 </statistics>
 <errors>
