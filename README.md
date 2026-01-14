@@ -6,3 +6,6 @@ This project demonstrates a Page Object Model (POM) structure using Robot Framew
 
 ```bash
 pip install -r requirements.txt
+
+Add python interpreter and create a virtual environment.
+robot tests
