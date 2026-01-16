@@ -19,10 +19,15 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install Chromium
+      - name: Install Google Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium chromium-driver
+          sudo apt-get install -y wget gnupg
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-linux.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-linux.gpg] http://dl.google.com/linux/chrome/deb/ stable main" \
+            | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
       - name: Install Python dependencies
         run: |
@@ -33,10 +38,7 @@ jobs:
         env:
           CI: "true"
         run: |
-          robot \
-            --outputdir reports \
-            --loglevel TRACE \
-            tests/
+          robot --outputdir reports tests/
 
       - name: Upload Robot Framework Reports
         if: always()
